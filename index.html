@@ -1,0 +1,318 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Правила Земного Эдема</title>
+    
+    <!-- Подключение Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Подключение иконок Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Настройка Tailwind (кастомные цвета и шрифты) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+                        serif: ['Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif'],
+                    },
+                    colors: {
+                        eden: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Плавное появление элементов */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Эффект матового стекла */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-[#f8fcf9] text-gray-800 font-sans relative overflow-x-hidden selection:bg-eden-200 min-h-screen">
+
+    <!-- Декоративные фоновые пятна -->
+    <div class="fixed top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-eden-300/30 rounded-full mix-blend-multiply blur-[100px] pointer-events-none -z-10"></div>
+    <div class="fixed top-[20%] right-[-10%] w-[40vw] h-[40vw] bg-teal-200/40 rounded-full mix-blend-multiply blur-[100px] pointer-events-none -z-10"></div>
+    <div class="fixed bottom-[-10%] left-[20%] w-[60vw] h-[60vw] bg-rose-100/40 rounded-full mix-blend-multiply blur-[100px] pointer-events-none -z-10"></div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+        
+        <!-- Хедер -->
+        <header class="text-center mb-16 fade-up">
+            <div class="inline-flex justify-center items-center p-4 bg-eden-100/50 backdrop-blur-xl rounded-full mb-6 border border-eden-200 shadow-sm">
+                <i data-lucide="leaf" class="w-10 h-10 text-eden-600"></i>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-serif font-bold text-eden-900 mb-4 tracking-tight">
+                Земной Эдем
+            </h1>
+            <p class="text-lg md:text-xl text-eden-700 max-w-2xl mx-auto font-medium opacity-90">
+                Место, где царят тишина, доброта и взаимопонимание. Пожалуйста, ознакомьтесь с нашими правилами.
+            </p>
+        </header>
+
+        <!-- Секция: Запрещено -->
+        <section class="mb-20">
+            <div class="flex items-center justify-center gap-3 mb-8 fade-up">
+                <i data-lucide="ban" class="w-8 h-8 text-rose-500"></i>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-rose-900">Запрещено</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                
+                <div class="glass-card p-6 rounded-3xl bg-rose-50/40 border-rose-100 fade-up">
+                    <div class="inline-flex p-3 rounded-2xl mb-4 bg-rose-100 text-rose-500">
+                        <i data-lucide="refresh-cw"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-rose-900">Лимит смены админа</h3>
+                    <p class="text-rose-900/80 leading-relaxed text-sm md:text-base">
+                        Сменить админа можно не больше трёх раз. Все админы разные, но одинаково добрые. Так что не бегай от одного к другому - попробуй просто дать шанс общению.
+                    </p>
+                </div>
+
+                <div class="glass-card p-6 rounded-3xl bg-rose-50/40 border-rose-100 fade-up">
+                    <div class="inline-flex p-3 rounded-2xl mb-4 bg-rose-100 text-rose-500">
+                        <i data-lucide="user-x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-rose-900">Личные границы</h3>
+                    <p class="text-rose-900/80 leading-relaxed text-sm md:text-base">
+                        Не выпрашивай личное у админов. Их юзер, имя, возраст и другие данные - личное пространство. Уважай границы, и тебе ответят тем же.
+                    </p>
+                </div>
+
+                <div class="glass-card p-6 rounded-3xl bg-rose-50/40 border-rose-100 fade-up">
+                    <div class="inline-flex p-3 rounded-2xl mb-4 bg-rose-100 text-rose-500">
+                        <i data-lucide="megaphone-off"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-rose-900">Без рекламы</h3>
+                    <p class="text-rose-900/80 leading-relaxed text-sm md:text-base">
+                        Не присылай ссылки на свои проекты, боты, каналы и прочее. Тут общаются души, а не маркетологи.
+                    </p>
+                </div>
+
+                <div class="glass-card p-6 rounded-3xl bg-rose-50/40 border-rose-100 fade-up">
+                    <div class="inline-flex p-3 rounded-2xl mb-4 bg-rose-100 text-rose-500">
+                        <i data-lucide="message-circle-off"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-rose-900">Вне политики</h3>
+                    <p class="text-rose-900/80 leading-relaxed text-sm md:text-base">
+                        Политику оставляем за дверью. Мы не место для споров. Пусть тут будет тишина, доброта и взаимопонимание.
+                    </p>
+                </div>
+
+                <div class="glass-card p-6 rounded-3xl bg-rose-50/40 border-rose-100 fade-up">
+                    <div class="inline-flex p-3 rounded-2xl mb-4 bg-rose-100 text-rose-500">
+                        <i data-lucide="heart"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-rose-900">Будь человеком</h3>
+                    <p class="text-rose-900/80 leading-relaxed text-sm md:text-base">
+                        Вежливость, уважение, доброта - это не формальность, а норма.
+                    </p>
+                </div>
+
+                <div class="glass-card p-6 rounded-3xl bg-rose-50/40 border-rose-100 fade-up">
+                    <div class="inline-flex p-3 rounded-2xl mb-4 bg-rose-100 text-rose-500">
+                        <i data-lucide="shield-alert"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-rose-900">Никаких личных данных</h3>
+                    <p class="text-rose-900/80 leading-relaxed text-sm md:text-base">
+                        Не делись номером, адресом, фамилией и другой личной информацией. Безопасность - это не шутка, даже если разговор кажется безобидным.
+                    </p>
+                </div>
+
+                <div class="glass-card p-6 rounded-3xl bg-rose-50/40 border-rose-100 fade-up">
+                    <div class="inline-flex p-3 rounded-2xl mb-4 bg-rose-100 text-rose-500">
+                        <i data-lucide="bot"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-rose-900">Не спамь</h3>
+                    <p class="text-rose-900/80 leading-relaxed text-sm md:text-base">
+                        Если отправляешь подряд больше 5–7 сообщений - бот устанет и решит отдохнуть от тебя (бан). Пиши спокойно, нам никуда спешить не нужно.
+                    </p>
+                </div>
+
+                <div class="glass-card p-6 rounded-3xl bg-rose-50/40 border-rose-100 fade-up">
+                    <div class="inline-flex p-3 rounded-2xl mb-4 bg-rose-100 text-rose-500">
+                        <i data-lucide="alert-triangle"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-rose-900">18+ под запретом</h3>
+                    <p class="text-rose-900/80 leading-relaxed text-sm md:text-base">
+                        Фото, видео, стикеры, гифки и даже намёки - не место для этого. Мы за чистое, уважительное общение.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Секция: Разрешено -->
+        <section class="mb-20">
+            <div class="flex items-center justify-center gap-3 mb-8 fade-up">
+                <i data-lucide="check-circle-2" class="w-8 h-8 text-eden-600"></i>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-eden-900">Разрешено</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+                
+                <div class="glass-card p-6 rounded-3xl bg-eden-50/40 border-eden-200 fade-up">
+                    <div class="inline-flex p-3 rounded-2xl mb-4 bg-eden-100 text-eden-600">
+                        <i data-lucide="message-square-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-eden-900">Свободные темы</h3>
+                    <p class="text-eden-800/80 leading-relaxed text-sm">
+                        Спрашивать про: увлечения, любимую музыку, домашних животных и иных родах деятельности вне учебного или рабочего процесса.
+                    </p>
+                </div>
+
+                <div class="glass-card p-6 rounded-3xl bg-eden-50/40 border-eden-200 fade-up">
+                    <div class="inline-flex p-3 rounded-2xl mb-4 bg-eden-100 text-eden-600">
+                        <i data-lucide="search"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-eden-900">Проверки</h3>
+                    <p class="text-eden-800/80 leading-relaxed text-sm">
+                        ПРОВЕРКА НЕ ЗАПРЕЩЕНА! Вам не обязательно писать в тех. поддержку. НО слишком частыми проверками Вы отнимаете время админов. Всё должно быть в меру.
+                    </p>
+                </div>
+
+                <div class="glass-card p-6 rounded-3xl bg-eden-50/40 border-eden-200 fade-up">
+                    <div class="inline-flex p-3 rounded-2xl mb-4 bg-eden-100 text-eden-600">
+                        <i data-lucide="gamepad-2"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-eden-900">Дружба и Ролплей</h3>
+                    <p class="text-eden-800/80 leading-relaxed text-sm">
+                        Дружить с админами можно и нужно! Флиртовать и вести ролевую игру (строго без 18+) можно по взаимному согласию и готовности админа.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Секция: Примечания -->
+        <section class="mb-16">
+            <div class="flex items-center justify-center gap-3 mb-8 fade-up">
+                <i data-lucide="sparkles" class="w-8 h-8 text-sky-500"></i>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-sky-900">Примечания</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                
+                <div class="glass-card p-6 rounded-3xl bg-sky-50/40 border-sky-200 fade-up">
+                    <div class="inline-flex p-3 rounded-2xl mb-4 bg-sky-100 text-sky-600">
+                        <i data-lucide="clock"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-sky-900">Если админ не отвечает</h3>
+                    <p class="text-sky-900/80 leading-relaxed text-sm md:text-base">
+                        Если администратор не выходит на связь более 15-ти минут, то убедительная просьба продублировать свое сообщение или позвать его/её по тегу(#).
+                    </p>
+                </div>
+
+                <div class="glass-card p-6 rounded-3xl bg-sky-50/40 border-sky-200 fade-up">
+                    <div class="inline-flex p-3 rounded-2xl mb-4 bg-sky-100 text-sky-600">
+                        <i data-lucide="coffee"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-sky-900">Рест (перерыв)</h3>
+                    <p class="text-sky-900/80 leading-relaxed text-sm md:text-base">
+                        Если Ваш администратор ушел в рест (восстанавливает силы) — Вы можете либо подождать, либо обратиться с просьбой переориентировать Вас на другого.
+                    </p>
+                </div>
+
+                <div class="glass-card p-6 rounded-3xl bg-sky-50/40 border-sky-200 fade-up">
+                    <div class="inline-flex p-3 rounded-2xl mb-4 bg-sky-100 text-sky-600">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-sky-900">Как сменить админа</h3>
+                    <p class="text-sky-900/80 leading-relaxed text-sm md:text-base">
+                        Напишите <b>«сменить админа»</b>. Для конкретного: <b>«сменить админа на #тег»</b>. С первого сообщения: <b>«хочу пообщаться с #тег»</b>.
+                    </p>
+                </div>
+
+                <div class="glass-card p-6 rounded-3xl bg-sky-50/40 border-sky-200 fade-up">
+                    <div class="inline-flex p-3 rounded-2xl mb-4 bg-sky-100 text-sky-600">
+                        <i data-lucide="eye-off"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-sky-900">Анонимный режим</h3>
+                    <p class="text-sky-900/80 leading-relaxed text-sm md:text-base">
+                        Мы не видим Ваших никнеймов/юзернеймов/аватарок. Всё анонимно. Мы сохраняем полную конфиденциальность — разговор останется только между Вами и админом.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Подвал -->
+        <footer class="text-center pt-12 border-t border-eden-200 relative fade-up">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-eden-300 to-transparent"></div>
+            <p class="text-xl md:text-2xl font-serif text-eden-800 italic flex flex-col items-center gap-3">
+                <i data-lucide="bird" class="w-6 h-6 text-eden-500"></i>
+                <span>Приятного общения в Земном Эдеме, лапонька.</span>
+            </p>
+        </footer>
+
+    </div>
+
+    <!-- Инициализация иконок и анимации -->
+    <script>
+        // Инициализация иконок Lucide
+        lucide.createIcons();
+
+        // Скрипт для плавного появления элементов при скролле
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // Перестаем следить после появления
+                    }
+                });
+            }, observerOptions);
+
+            // Находим все элементы с классом fade-up и добавляем задержку
+            const elements = document.querySelectorAll('.fade-up');
+            elements.forEach((el, index) => {
+                // Немного задерживаем анимацию соседних элементов для эффекта "лесенки"
+                el.style.transitionDelay = `${(index % 4) * 0.1}s`;
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
+
